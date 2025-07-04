@@ -4,9 +4,48 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>FundiConnect</title>
+
+    <!-- ✅ Tailwind CDN must come first -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- ✅ THEN your custom config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#B86B3E', // Caramel brown
+              hoverbrown: '#9e5027', // Darker hover brown
+              dark: '#000000',
+              light: '#FFFFFF',
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.8s ease-out forwards',
+              'slide-up': 'slideUp 0.6s ease-out forwards',
+              'pop': 'pop 0.5s ease-out forwards',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: 0 },
+                '100%': { opacity: 1 },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(30px)', opacity: 0 },
+                '100%': { transform: 'translateY(0)', opacity: 1 },
+              },
+              pop: {
+                '0%': { transform: 'scale(0.95)', opacity: 0 },
+                '100%': { transform: 'scale(1)', opacity: 1 },
+              },
+            },
+          },
+        },
+      };
+    </script>
   </head>
-  <body>
+
+  <body class="bg-gradient-to-br from-[#fffaf5] via-[#fbe6d5] to-[#e7bfa0] text-dark font-sans">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

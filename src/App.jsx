@@ -1,56 +1,52 @@
+// App.jsx
 import React from "react";
+import { Routes, Route, useLocation, Link } from "react-router-dom";
+import Navbar from "./components/navbar";
+import Footer from "./components/footer";
+import Home from "./pages/Home";
+import Book from "./pages/Book";
+import Chat from "./pages/chat";
+import About from "./pages/About";
+import Login from "./pages/login";
+import Signup from "./pages/signup";
 
-export default function FundiConnectPage() {
+function App() {
+  const location = useLocation();
+
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center p-6">
-      {/* Hero Section */}
-      <header className="text-center py-10">
-        <h1 className="text-4xl font-bold text-blue-600">FundiConnect</h1>
-        <p className="text-lg mt-4 text-gray-700 max-w-xl mx-auto">
-          Find trusted plumbers, electricians, cleaners, and more — book reliable fundis near you in minutes.
-        </p>
-        <a
-          href="#chatbot"
-          className="mt-6 inline-block bg-blue-600 text-white px-6 py-2 rounded-2xl shadow hover:bg-blue-700"
-        >
-          Find a Fundi Now
-        </a>
-      </header>
+    <div className="bg-gradient-to-br from-[#fffaf5] via-[#fbe6d5] to-[#e7bfa0] text-dark font-sans min-h-screen flex flex-col">
+      {/* Navigation Bar */}
+      <div className="flex items-center justify-between p-4 shadow-md bg-white sticky top-0 z-50">
+        <h1 className="text-xl font-bold text-primary">FundiConnect</h1>
+        <nav className="space-x-4">
+          <Link to="/" className="text-dark hover:text-primary font-medium">Home</Link>
+          <Link to="/book" className="text-dark hover:text-primary font-medium">Book</Link>
+          <Link to="/chat" className="text-dark hover:text-primary font-medium">Chat</Link>
+          <Link to="/about" className="text-dark hover:text-primary font-medium">About</Link>
+        </nav>
+        <div className="space-x-2">
+          <Link to="/login" className="bg-primary text-white px-4 py-2 rounded-md hover:bg-hoverbrown">Login</Link>
+          <Link to="/signup" className="border border-primary text-primary px-4 py-2 rounded-md hover:bg-hoverbrown hover:text-white">Sign Up</Link>
+        </div>
+      </div>
 
-      {/* Features Section */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-4xl">
-        <div className="bg-white p-6 rounded-2xl shadow">
-          <h2 className="text-xl font-semibold text-blue-600">Verified Fundis</h2>
-          <p className="text-gray-600 mt-2">We connect you with reliable professionals in your area.</p>
+      {/* Main Content Area */}
+      <main className="flex-grow">
+        <div className="animate-fade-in px-4 md:px-8">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/book" element={<Book />} />
+            <Route path="/chat" element={<Chat />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+          </Routes>
         </div>
-        <div className="bg-white p-6 rounded-2xl shadow">
-          <h2 className="text-xl font-semibold text-blue-600">Simple Chat Interface</h2>
-          <p className="text-gray-600 mt-2">Use our chatbot to quickly find and book services.</p>
-        </div>
-        <div className="bg-white p-6 rounded-2xl shadow">
-          <h2 className="text-xl font-semibold text-blue-600">Affordable & Fast</h2>
-          <p className="text-gray-600 mt-2">Get help fast at fair prices — no middlemen.</p>
-        </div>
-      </section>
+      </main>
 
-      {/* Chatbot Embed */}
-      <section id="chatbot" className="mt-16 w-full max-w-3xl">
-        <h2 className="text-2xl font-bold text-center text-blue-600 mb-4">Chat With Our AI Assistant</h2>
-        <div className="w-full h-[600px] rounded-2xl overflow-hidden shadow-xl">
-          <iframe
-            src="https://www.chatbase.co/chatbot-iframe/YOUR_BOT_ID_HERE"
-            title="FundiConnect AI Bot"
-            width="100%"
-            height="100%"
-            style={{ border: "none" }}
-            allow="clipboard-write"
-          ></iframe>
-        </div>
-      </section>
-
-      <footer className="mt-16 text-sm text-gray-400 text-center">
-        &copy; {new Date().getFullYear()} FundiConnect. Built with ❤️ for the Vibe Hackathon.
-      </footer>
+      <Footer />
     </div>
   );
 }
+
+export default App;
