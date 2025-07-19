@@ -1,0 +1,77 @@
+[
+  {
+    "name": "John Doe",
+    "gender": "Male",
+    "service": "Plumbing",
+    "location": "Nairobi",
+    "rating": 4.5,
+    "price": 1500,
+    "availability": true
+  },
+  {
+    "name": "Jane Smith",
+    "gender": "Female",
+    "service": "Electrical",
+    "location": "Mombasa",
+    "rating": 4.8,
+    "price": 2000,
+    "availability": false
+  },
+  {
+    "name": "Peter Mwangi",
+    "gender": "Male",
+    "service": "Carpentry",
+    "location": "Kisumu",
+    "rating": 4.2,
+    "price": 1800,
+    "availability": true
+  },
+
+
+ {
+      "name": "James Mwangi",
+      "skill": "plumber",
+      "location": "Nairobi",
+      "gender": "male",
+      "rating": 4.7,
+      "price": 1500,
+      "availability": "available"
+    },
+    {
+      "name": "Sarah Njeri",
+      "skill": "electrician",
+      "location": "Thika",
+      "gender": "female",
+      "rating": 4.9,
+      "price": 1800,
+      "availability": "available"
+    },
+    {
+      "name": "Brian Otieno",
+      "skill": "handyman",
+      "location": "Kisumu",
+      "gender": "male",
+      "rating": 4.5,
+      "price": 1200,
+      "availability": "busy"
+    },
+    {
+      "name": "Grace Wambui",
+      "skill": "tailor",
+      "location": "Nakuru",
+      "gender": "female",
+      "rating": 4.8,
+      "price": 1000,
+      "availability": "available"
+    },
+    {
+      "name": "Ali Yusuf",
+      "skill": "mason",
+      "location": "Mombasa",
+      "gender": "male",
+      "rating": 4.6,
+      "price": 2000,
+      "availability": "busy"
+    }
+]
+  
