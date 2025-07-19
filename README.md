@@ -1,4 +1,6 @@
 This is the deployed link; fundi-connect-th9o.vercel.app
+>>>>>>>>>
+>>>>>>>>>
 FundiConnect
 FundiConnect is a smart web application that connects users to reliable local fundis (skilled workers) like plumbers, electricians, carpenters, and more. Whether you need a quick fix or a big job done, FundiConnect helps you book, chat, and manage service providers — all in one place.
 
